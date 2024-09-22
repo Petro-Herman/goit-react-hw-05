@@ -1,0 +1,16 @@
+.header {
+  border-bottom: 1px solid grey;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  color: black;
+}
+
+.isActive {
+  color: brown;
+}

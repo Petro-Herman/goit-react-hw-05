@@ -1,0 +1,20 @@
+.cardWrap {
+  text-align: center;
+}
+
+.img {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.placeholderIcon {
+  width: 100px;
+  height: 150px;
+  color: darkslategray;
+}
+
+.name {
+  color: rgb(12, 15, 80);
+  font-weight: 600;
+}
