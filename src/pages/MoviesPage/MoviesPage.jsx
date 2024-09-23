@@ -15,6 +15,7 @@ export default function MoviesPage() {
   async function handleSubmit(value) {
     if (!value.trim()) {
       setErrorQuery(true);
+      setMovies([]);
       return;
     }
     setErrorQuery(null);
@@ -27,6 +28,9 @@ export default function MoviesPage() {
       try {
         setLoading(true);
         const data = await fetchdata(1, movieName, "search/movie");
+        if (data.results.length === 0) {
+          setError("No movies found. Try a different search query.");
+        }
         setMovies(data.results);
       } catch (error) {
         setError(error.message);
@@ -43,6 +47,7 @@ export default function MoviesPage() {
       {errorQuery && <p>You need to fill in your query!</p>}
       {error && <b>Error!!!</b>}
       {loading && <b>Loading...</b>}
+      {!loading && movies.length === 0 && !error && <p>No results found</p>}
       {movies.length > 0 && <MovieList allMovies={movies} />}
     </div>
   );

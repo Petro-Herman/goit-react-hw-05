@@ -15,11 +15,16 @@ export default function MovieCast() {
     async function fetchMovieCast() {
       try {
         setLoading(true);
-        setError(false);
+        // setError(false);
+        setError(null);
         const data = await getInfo(movieId, "credits");
-        setMovieCast(data.cast);
+        if (data && data.cast) {
+          setMovieCast(data.cast);
+        } else {
+          setError("No cast information available.");
+        }
       } catch (error) {
-        setError(error.message);
+        setError(error.message || "Failed to fetch cast information.");
       } finally {
         setLoading(false);
       }

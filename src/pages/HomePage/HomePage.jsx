@@ -17,7 +17,11 @@ export default function HomePage() {
           "",
           "trending/movie/day?language=en-US"
         );
-        setTrendingMovies(data.results);
+        if (data && data.results) {
+          setTrendingMovies(data.results);
+        } else {
+          throw new Error("No data returned from the API.");
+        }
       } catch (error) {
         setError(error.message);
       } finally {

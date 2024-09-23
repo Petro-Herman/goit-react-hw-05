@@ -10,7 +10,10 @@ export default function CastList({ info }) {
       {photoPath ? (
         <img src={photoPath} alt={`${info.name}'s photo`} className={css.img} />
       ) : (
-        <BsFileEarmarkPerson className={css.placeholderIcon} />
+        <BsFileEarmarkPerson
+          title="Placeholder icon for missing profile photo"
+          className={css.placeholderIcon}
+        />
       )}
       <ul>
         <li className={css.name}>{info.name}</li>

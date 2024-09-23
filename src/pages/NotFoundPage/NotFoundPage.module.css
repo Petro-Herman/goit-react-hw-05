@@ -1,0 +1,28 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 80px;
+  color: #ff6b6b;
+}
+
+.message {
+  font-size: 24px;
+  color: #333;
+}
+
+.backLink {
+  font-size: 18px;
+  color: white;
+  background-color: #ff6b6b;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.backLink:hover {
+  background-color: #ff3b3b;
+}
